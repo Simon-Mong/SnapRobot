@@ -1,10 +1,10 @@
 # SnapRobot
 
 SnapRobot is a app runs on mobile phones.It works like an extension of visual programming language Snap!
-It could work as a wireless connection to hardwares or a message dispatcher for diffrent coders who connect their Snap! program to it.
-It also delivers the blocks to access  the sensors of the phone.
+It could work as a wireless connection to hardwares or a message dispatcher for diffrent coders who connects their Snap! program to it.
+It also delivers the blocks which could access the sensors of the phone.
 Your could program with Snap! in this app too which means you could use a Snap! program on the phone to controll another program on pc. 
-More than two players could use their phone to controll diffrent sprites in one program on pc.
+More than two players could use their phones to controll diffrent sprites in one program on pc.
 It supports remote events too.With these features we could play a Snap! game as we are using WII or we could teach children network protocols with remote events.
 They are all interesting ways of learning coding.
 
