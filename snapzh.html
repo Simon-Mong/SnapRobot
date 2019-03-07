@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Snap!积木编程-创建属于你的程序世界</title>
+        <link rel="shortcut icon" href="src/favicon.ico">
+        <script type="text/javascript" src="src/morphic.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/widgets.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/blocks.js?version=2018-11-13"></script>
+        <script type="text/javascript" src="src/threads.js?version=2018-10-26"></script>
+        <script type="text/javascript" src="src/objects.js?version=2018-11-28"></script>
+        <script type="text/javascript" src="src/gui.js?version=2018-11-29"></script>
+        <script type="text/javascript" src="src/paint.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/lists.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/byob.js?version=2018-11-12"></script>
+        <script type="text/javascript" src="src/tables.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/symbols.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/sketch.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/xml.js?version=2018-11-12"></script>
+        <script type="text/javascript" src="src/store.js?version=2018-11-12"></script>
+        <script type="text/javascript" src="src/locale.js?version=2018-11-06"></script>
+        <script type="text/javascript" src="src/cloud.js?version=2018-11-28"></script>
+        <script type="text/javascript" src="src/sha512.js?version=2018-10-02"></script>
+        <script type="text/javascript" src="src/FileSaver.min.js?version=2018-10-02"></script>
+		<script type="text/javascript">
+    		function judgeTerminal () {
+    				if (/(iPhone|iPad|iPod|iOS|Android)/i.test(window.navigator.userAgent)){
+    						return 'mobile';
+    				}else{
+    						return 'pc';
+    				}	  
+    		} 
+    		
+    		scriptNodeSnapRobot = document.createElement("script");
+    		scriptNodeInitLang  = document.createElement("script"); 
+    		scriptNodeSnapRobot.setAttribute("type", "text/javascript");
+    		scriptNodeInitLang.setAttribute("type", "text/javascript");
+    		
+    		if (judgeTerminal() === 'pc') {
+    				scriptNodeSnapRobot.setAttribute("src", "snapontop/snapRobot.js");
+    				scriptNodeInitLang.setAttribute("src", "snapontop/initLang.js");  	
+    		}else{
+     				scriptNodeSnapRobot.setAttribute("src", "snapontop/snapRobot_mobile.js");
+    				scriptNodeInitLang.setAttribute("src", "snapontop/initLang_mobile.js");    			
+    		} 			
+    		
+    		document.head.appendChild(scriptNodeSnapRobot);
+    		document.head.appendChild(scriptNodeInitLang);    
+		</script>
+		<script type="text/javascript" src="snapontop/myCloud.js"></script>
+		<script type="text/javascript" src="locale/lang-zh_CN.js"></script> 	
+		<script type="text/javascript" src="snapontop/locale/lang-zh_CN.js"></script> 	
+		<script type="text/javascript">
+			var world,ideMorph;
+			window.onload = function () {
+				world = new WorldMorph(document.getElementById('world'));
+                world.worldCanvas.focus();
+				ideMorph = new IDE_Morph('zh_CN');
+				ideMorph.openIn(world);
+        loop();
+			};
+			function loop() {
+        requestAnimationFrame(loop);
+				world.doOneCycle();
+			}
+		</script>
+	</head>
+	<body style="margin: 0;">
+		<canvas id="world" tabindex="1" style="position: absolute;" />
+	</body>
+</html>
