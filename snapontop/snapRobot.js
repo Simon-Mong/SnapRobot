@@ -1856,6 +1856,12 @@ SpriteMorph.prototype.init = function (globals) {
 SpriteMorph.prototype.org_fullCopy = SpriteMorph.prototype.fullCopy;
 SpriteMorph.prototype.fullCopy = function (forClone) {
 	  var c = this.org_fullCopy(forClone);
+    this.wsState = 0;		
+    this.wsDataState = 0;  
+    this.wsQueue = new List();  
+    this.wsQueueNo = 0;    
+    this.wsLastAddr = '';	
+		this.lastRemoteEvent = '';	  
     c.isColorReplaced = this.isColorReplaced;
     c.alternativeColor = this.alternativeColor;
     return c;
